@@ -1,0 +1,164 @@
+* {
+  box-sizing: border-box;
+  font-family: "Orbitron", sans-serif;
+}
+
+.cyber-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: black;
+  color: #00ffff;
+  overflow: hidden;
+}
+
+.matrix-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.cyber-card {
+  z-index: 2;
+  width: 380px;
+  padding: 2.5rem;
+  background: rgba(0, 255, 255, 0.06);
+  border: 1px solid rgba(0, 255, 255, 0.4);
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  position: relative;
+}
+
+h1 {
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+p {
+  font-size: 0.7rem;
+  opacity: 0.7;
+  margin-bottom: 2rem;
+}
+
+.field {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  font-size: 0.65rem;
+  letter-spacing: 1px;
+}
+
+input {
+  width: 100%;
+  padding: 0.7rem;
+  background: transparent;
+  border: 1px solid rgba(0, 255, 255, 0.4);
+  color: #00ffff;
+}
+
+.password-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.password-wrap input {
+  position: relative;
+  z-index: 1;
+}
+
+.password-wrap button {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #00ffff;
+  font-size: 0.65rem;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.scanline {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 255, 255, 0.7),
+    transparent
+  );
+  transform: translateX(-100%);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.cyber-card.scan .scanline {
+  animation: scan 0.6s linear;
+  opacity: 1;
+}
+
+@keyframes scan {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.enter-btn {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 1.5rem;
+  border: 1px solid #00ffff;
+  background: transparent;
+  color: #00ffff;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.enter-btn:hover {
+  background: #00ffff;
+  color: black;
+  box-shadow: 0 0 30px #00ffff;
+}
+/* ───────── System Messages ───────── */
+.system-text {
+  margin-top: 1rem;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-align: center;
+  animation: flicker 0.15s infinite alternate;
+}
+
+/* ───────── Auth States ───────── */
+.cyber-card.authenticating {
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.6);
+}
+
+.cyber-card.granted {
+  border-color: #00ff9c;
+  box-shadow: 0 0 60px #00ff9c;
+  transform: scale(1.03);
+}
+
+.cyber-card.denied {
+  border-color: #ff0044;
+  box-shadow: 0 0 40px #ff0044;
+  animation: shake 0.4s;
+}
+
+/* ───────── Animations ───────── */
+@keyframes flicker {
+  from { opacity: 0.6; }
+  to { opacity: 1; }
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  50% { transform: translateX(4px); }
+  75% { transform: translateX(-4px); }
+  100% { transform: translateX(0); }
+}
