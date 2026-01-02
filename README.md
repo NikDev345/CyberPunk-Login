@@ -50,6 +50,12 @@ Clean separation of components
 
 This is not just a UI demo — it’s a behavior-driven interface.
 
+## 📘 Documentation
+- [Authentication Flow](docs/flow.md)
+- [Animation System](docs/animations.md)
+- [Design Decisions](docs/design-decisions.md)
+
+
 🛠️ Tech Stack
 
 React (Vite)
@@ -64,19 +70,7 @@ Google Fonts (Orbitron)
 
 No external animation libraries used.
 
-📂 Project Structure
-src/
-├─ App.jsx
-├─ CyberLogin.jsx
-├─ CyberLogin.css
-├─ MatrixRain.jsx
-├─ BootSequence.jsx
-├─ Dashboard.jsx
-├─ index.css
-├─ main.jsx
-index.html
-
-▶️ Getting Started
+**▶️ Getting Started**
 1️⃣ Clone the repository
 git clone https://github.com/your-username/cyberpunk-login-ui.git
 
