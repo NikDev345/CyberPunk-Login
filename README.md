@@ -144,9 +144,8 @@ Subtle loading indicators
 
 Only if they add real value.
 
-this commit just for update 
-we come new update in this project soon 
-
+will update this repo soon 
+stay tuned
 👤 Author
 
 Nikhil Rangarej
